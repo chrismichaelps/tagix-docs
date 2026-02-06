@@ -1,0 +1,57 @@
+<svg viewBox="0 0 350 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="logo-wash" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
+    </filter>
+  </defs>
+
+  <!-- Background wash (Terms style) -->
+  <path d="M40 50 Q 175 10 310 50 T 310 80 Q 175 110 40 80 T 40 50" fill="#c6613f" opacity="0.08"
+    filter="url(#logo-wash)" />
+
+  <!-- Group: Icon (T inside Orange Square) -->
+  <g transform="translate(10, 10)">
+    <!-- Orange Square -->
+    <rect x="10" y="10" width="80" height="80" rx="16" fill="#c6613f" />
+
+    <!-- The "T" from terms.svg, scaled to fit. -->
+    <g transform="scale(0.1)">
+      <!-- Vertical stroke (T stem) -->
+      <path d="M480 250 
+           C 460 350, 440 600, 450 800
+           C 480 820, 520 820, 550 800
+           C 560 600, 540 350, 520 250
+           Z" fill="#ffffff" />
+
+      <!-- Horizontal stroke (T bar) -->
+      <path d="M250 220
+           C 350 180, 650 180, 750 220
+           C 780 240, 780 280, 750 300
+           C 650 260, 350 260, 250 300
+           C 220 280, 220 240, 250 220
+           Z" fill="#ffffff" />
+    </g>
+  </g>
+
+  <!-- Group: Text 'tagix' to the right -->
+  <g transform="translate(110, 15)">
+    <!-- 't' -->
+    <path d="M20 15 V 50 Q 20 60 30 60 H 35 M 10 30 H 40" stroke="#141413" stroke-width="6" stroke-linecap="round"
+      stroke-linejoin="round" />
+
+    <!-- 'a' -->
+    <path d="M75 30 Q 60 30 60 45 Q 60 60 75 60 V 30 Z M 75 60 Q 80 60 85 55" stroke="#141413" stroke-width="6"
+      stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- 'g' -->
+    <path d="M115 30 Q 100 30 100 45 Q 100 60 115 60 V 30 Z M 115 60 V 75 Q 115 85 100 85" stroke="#141413"
+      stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- 'i' -->
+    <path d="M140 30 V 60" stroke="#141413" stroke-width="6" stroke-linecap="round" />
+    <circle cx="140" cy="15" r="5" fill="#c6613f" />
+
+    <!-- 'x' -->
+    <path d="M165 30 L 195 60 M 195 30 L 165 60" stroke="#141413" stroke-width="6" stroke-linecap="round" />
+  </g>
+</svg>

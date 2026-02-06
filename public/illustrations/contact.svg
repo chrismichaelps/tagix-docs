@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="contact-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+
+  <!-- Background Shapes -->
+  <rect x="200" y="300" width="600" height="400" rx="50" fill="#d97757" opacity="0.08" filter="url(#contact-blur)" />
+
+  <!-- Envelope / Letter Abstract Stroke -->
+  <path d="M150 350
+       L 500 600
+       L 850 350" stroke="#141413" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <path d="M150 350 V 750 Q 150 800 200 800 H 800 Q 850 800 850 750 V 350" stroke="#141413" stroke-width="20"
+    stroke-linecap="round" stroke-linejoin="round" opacity="0.8" fill="none" />
+
+  <!-- Abstract @ symbol swirl -->
+  <path d="M600 500
+       Q 500 450 450 500
+       T 450 600
+       Q 500 650 600 600
+       Q 700 550 700 450
+       Q 700 300 500 300
+       Q 300 300 300 600
+       Q 300 800 500 850" stroke="#c6613f" stroke-width="25" stroke-linecap="round" fill="none" opacity="0.6" />
+</svg>

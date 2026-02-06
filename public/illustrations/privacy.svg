@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="privacy-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+
+  <!-- Background shape -->
+  <circle cx="500" cy="500" r="400" fill="#d97757" opacity="0.05" filter="url(#privacy-blur)" />
+
+  <!-- Vertical stroke (P stem) -->
+  <path d="M350 200
+       C 330 400, 340 700, 350 850
+       C 380 870, 420 870, 450 850
+       C 440 700, 430 400, 450 200
+       Z" fill="#141413" opacity="0.9" />
+
+  <!-- Loop stroke (P Bowl) -->
+  <path d="M400 200
+       C 700 150, 900 350, 800 550
+       C 700 700, 500 650, 430 600
+       C 460 550, 500 550, 550 500
+       C 700 500, 750 400, 650 300
+       C 550 250, 450 280, 400 300
+       Z" fill="#c6613f" opacity="0.8" />
+
+  <!-- Detail Accent -->
+  <circle cx="600" cy="400" r="30" fill="#f0eee6" opacity="0.5" />
+</svg>

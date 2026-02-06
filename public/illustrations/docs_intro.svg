@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="docs-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+
+  <rect x="200" y="200" width="600" height="600" rx="50" fill="#c6613f" opacity="0.05" filter="url(#docs-blur)" />
+
+  <!-- Book / Docs Shape -->
+  <path d="M300 300 V 700 Q 300 750 350 750 H 700" stroke="#141413" stroke-width="30" stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path d="M700 750 V 350 Q 700 300 650 300 H 300" stroke="#141413" stroke-width="30" stroke-linecap="round"
+    stroke-linejoin="round" opacity="0.5" />
+
+  <!-- Lines of text -->
+  <path d="M400 450 H 600" stroke="#d97757" stroke-width="20" stroke-linecap="round" />
+  <path d="M400 550 H 600" stroke="#d97757" stroke-width="20" stroke-linecap="round" opacity="0.7" />
+</svg>

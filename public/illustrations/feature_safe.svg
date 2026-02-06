@@ -1,0 +1,10 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Shield / Lock Shape -->
+  <path d="M250 100
+       C 250 100, 400 150, 400 250
+       C 400 350, 250 450, 250 450
+       C 250 450, 100 350, 100 250
+       C 100 150, 250 100, 250 100" stroke="#c6613f" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    fill="#c6613f" fill-opacity="0.1" />
+  <path d="M250 200 L 250 300 M 200 250 L 300 250" stroke="#141413" stroke-width="25" stroke-linecap="round" />
+</svg>

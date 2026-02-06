@@ -1,0 +1,6 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Lightning / Reactivity -->
+  <path d="M280 100 L 180 250 H 300 L 220 400" stroke="#141413" stroke-width="25" stroke-linecap="round"
+    stroke-linejoin="round" fill="none" />
+  <circle cx="250" cy="250" r="180" stroke="#d97757" stroke-width="15" opacity="0.4" stroke-dasharray="20 40" />
+</svg>
