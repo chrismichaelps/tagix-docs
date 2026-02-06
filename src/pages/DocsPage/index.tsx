@@ -82,8 +82,20 @@ export const DocsPage = define<{}, DocsPageScriptReturn>({
       closeSidebar,
     };
   },
-  template: ({ pageState, content, currentSlug, isSidebarOpen, closeSidebar }) => (
+  template: ({ pageState, content, currentSlug, isSidebarOpen, toggleSidebar, closeSidebar }) => (
     <div class={CSS_CLASSES.LAYOUT}>
+      <button
+        class={CSS_CLASSES.MOBILE_FAB}
+        onClick={toggleSidebar}
+        aria-label="Open navigation menu"
+      >
+        <img
+          src={isSidebarOpen.value ? "/icons/icon-close.svg" : "/icons/icon-menu.svg"}
+          alt={isSidebarOpen.value ? "Close menu" : "Open menu"}
+          width="24"
+          height="24"
+        />
+      </button>
       <div
         class={`${CSS_CLASSES.OVERLAY} ${isSidebarOpen.value ? CSS_CLASSES.HAMBURGER_OPEN : ""}`}
         onClick={closeSidebar}

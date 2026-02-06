@@ -8,6 +8,7 @@ export const CSS_CLASSES = {
   LAYOUT: "docs-layout",
   MOBILE_HEADER: "docs-mobile-header",
   MOBILE_MENU_BTN: "docs-mobile-menu-btn",
+  MOBILE_FAB: "docs-mobile-fab",
   HAMBURGER: "hamburger-icon",
   HAMBURGER_OPEN: "open",
   OVERLAY: "docs-overlay",

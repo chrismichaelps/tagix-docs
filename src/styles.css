@@ -792,16 +792,30 @@ a:hover {
   border-color: var(--color-docs-accent);
 }
 
+.docs-mobile-fab {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .docs-sidebar {
-    transform: translateX(-100%);
+    transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding-top: 60px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    padding-top: 20px;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 85vh;
+    border-radius: 20px 20px 0 0;
+    border-right: none;
+    border-top: 1px solid var(--color-docs-border);
+    z-index: 55;
   }
 
   .docs-sidebar.open {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .docs-sidebar-header {
@@ -810,6 +824,7 @@ a:hover {
 
   .docs-main {
     margin-left: 0;
+    padding-top: 0;
   }
 
   .docs-content {
@@ -818,31 +833,50 @@ a:hover {
   }
 
   .docs-mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    padding: 0 1.25rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--color-docs-bg);
-    border-bottom: 1px solid var(--color-docs-border);
-    z-index: 50;
+    display: none !important;
   }
 
-  .docs-mobile-menu-btn {
-    display: flex;
+  @keyframes fab-breath {
+    0% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(198, 97, 63, 0.5);
+      transform: scale(1.05);
+    }
+    100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+    }
+  }
+
+  .docs-mobile-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: var(--color-docs-accent);
+    color: white;
+    border-radius: 50% 50% 0 50%;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--color-docs-border);
-    background: transparent;
-    border-radius: 8px;
-    color: var(--color-docs-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 60;
+    border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fab-breath 3s infinite ease-in-out;
+  }
+
+  .docs-mobile-fab:hover {
+    background: var(--color-docs-accent-hover);
+  }
+
+  .docs-mobile-fab:active {
+    transform: scale(0.95);
   }
 
   .docs-mobile-title {
