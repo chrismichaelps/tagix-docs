@@ -22,7 +22,7 @@ export const TermsPage = define({
             <div class="tagix-hero-split">
               <div class="tagix-hero-text">
                 <h1 class="tagix-page-title">Terms of Service</h1>
-                <p class="tagix-page-date">Last updated: February 2025</p>
+                <p class="tagix-page-date">Last updated: February 2026</p>
               </div>
               <img
                 src="/illustrations/terms.svg"
