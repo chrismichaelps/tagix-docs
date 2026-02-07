@@ -25,6 +25,7 @@ export const FOOTER_CLASSES = {
 export const ROUTES = {
   HOME: "/",
   DOCS: "/docs",
+  API: "/api",
   TERMS: "/terms",
   PRIVACY: "/privacy",
   DISCLAIMER: "/disclaimer",

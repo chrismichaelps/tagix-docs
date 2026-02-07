@@ -53,3 +53,7 @@ export {
   updateMenuVisibility,
   isMenuVisible,
 } from "./mobileMenu";
+
+export { apiStore, ApiState, type ApiStateType, searchApi, resetApi } from "./api";
+
+export type { ApiItem } from "../content/api_data";

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="api-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+    </filter>
+  </defs>
+
+  <!-- Background shape -->
+  <circle cx="250" cy="250" r="200" fill="#d97757" opacity="0.05" filter="url(#api-blur)" />
+  <!-- API / Connectors -->
+  <rect x="140" y="200" width="80" height="80" rx="15" fill="#f0eee6" stroke="#c6613f" stroke-width="8" />
+  <rect x="280" y="200" width="80" height="80" rx="15" fill="#141413" opacity="0.9" />
+
+  <!-- Connecting line -->
+  <path d="M220 240 L280 240" stroke="#141413" stroke-width="8" stroke-linecap="round" />
+
+  <!-- Floating elements -->
+  <rect x="180" y="140" width="40" height="40" rx="8" fill="#d97757" opacity="0.6" />
+  <rect x="280" y="300" width="50" height="50" rx="10" fill="#c6613f" opacity="0.3" />
+  <rect x="100" y="260" width="30" height="30" rx="6" fill="#141413" opacity="0.2" />
+</svg>

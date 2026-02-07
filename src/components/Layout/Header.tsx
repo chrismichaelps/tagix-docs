@@ -18,15 +18,21 @@ export const Header = define({
       navigateTo(ROUTES.DOCS);
     });
 
+    const handleApiClick = useCallback((e: Event) => {
+      e.preventDefault();
+      closeMenu();
+      navigateTo(ROUTES.API);
+    });
+
     const handleGitHubClick = useCallback((e: Event) => {
       e.preventDefault();
       closeMenu();
       window.open("https://github.com/chrismichaelps/tagix", "_blank", "noopener,noreferrer");
     });
 
-    return { isMenuOpen, toggleMenu, handleDocsClick, handleGitHubClick };
+    return { isMenuOpen, toggleMenu, handleDocsClick, handleApiClick, handleGitHubClick };
   },
-  template: ({ isMenuOpen, toggleMenu, handleDocsClick, handleGitHubClick }) => (
+  template: ({ isMenuOpen, toggleMenu, handleDocsClick, handleApiClick, handleGitHubClick }) => (
     <>
       <header class={HEADER_CLASSES.HEADER}>
         <div class={HEADER_CLASSES.CONTENT}>
@@ -37,6 +43,9 @@ export const Header = define({
           <nav class={HEADER_CLASSES.NAV}>
             <Link to={ROUTES.DOCS} class={HEADER_CLASSES.NAV_LINK}>
               Docs
+            </Link>
+            <Link to={ROUTES.API} class={HEADER_CLASSES.NAV_LINK}>
+              API
             </Link>
           </nav>
 
@@ -56,6 +65,9 @@ export const Header = define({
       <nav class={`tagix-mobile-menu ${isMenuOpen.value ? "is-open" : ""}`}>
         <a href="/docs" class="tagix-mobile-menu-link" onClick={handleDocsClick}>
           Docs
+        </a>
+        <a href="/api" class="tagix-mobile-menu-link" onClick={handleApiClick}>
+          API
         </a>
         <a
           href="https://github.com/chrismichaelps/tagix"

@@ -7,10 +7,12 @@ import { TermsPage } from "../pages/Legal/Terms";
 import { PrivacyPage } from "../pages/Legal/Privacy";
 import { DisclaimerPage } from "../pages/Legal/Disclaimer";
 import { ContactPage } from "../pages/Legal/Contact";
+import { ApiPage } from "../pages/ApiPage";
 import { logger } from "../utils/logger";
 
 const routes: RouteRecord[] = [
   { path: "/", name: "home", component: HomePage },
+  { path: "/api", name: "api", component: ApiPage },
   { path: "/terms", name: "terms", component: TermsPage },
   { path: "/privacy", name: "privacy", component: PrivacyPage },
   { path: "/disclaimer", name: "disclaimer", component: DisclaimerPage },
