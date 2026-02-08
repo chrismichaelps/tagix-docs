@@ -3,13 +3,25 @@ import { Link } from "@effuse/router";
 import { navigateTo } from "@effuse/router";
 import { HEADER_CLASSES, ROUTES, ASSETS } from "./constants";
 import { closeMenu, toggleMenu, mobileMenuStore, MobileMenuState } from "../../store/mobileMenu";
+import {
+  toggleAboutDropdown,
+  aboutDropdownStore,
+  AboutDropdownState,
+  closeAboutDropdown,
+} from "../../store/aboutDropdown";
+import { AboutDropdown } from "../AboutDropdown/AboutDropdown";
 
 export const Header = define({
   script: ({ useCallback }) => {
     const isMenuOpen = signal(MobileMenuState.$is("Open")(mobileMenuStore.stateValue));
+    const isAboutOpen = signal(AboutDropdownState.$is("Open")(aboutDropdownStore.stateValue));
 
     mobileMenuStore.subscribe((state) => {
       isMenuOpen.value = MobileMenuState.$is("Open")(state);
+    });
+
+    aboutDropdownStore.subscribe((state) => {
+      isAboutOpen.value = AboutDropdownState.$is("Open")(state);
     });
 
     const handleDocsClick = useCallback((e: Event) => {
@@ -24,15 +36,45 @@ export const Header = define({
       navigateTo(ROUTES.API);
     });
 
+    const handleAboutClick = useCallback((e: Event) => {
+      e.preventDefault();
+      toggleAboutDropdown();
+    });
+
     const handleGitHubClick = useCallback((e: Event) => {
       e.preventDefault();
       closeMenu();
       window.open("https://github.com/chrismichaelps/tagix", "_blank", "noopener,noreferrer");
     });
 
-    return { isMenuOpen, toggleMenu, handleDocsClick, handleApiClick, handleGitHubClick };
+    const handleReleasesClick = useCallback((e: Event) => {
+      e.preventDefault();
+      closeAboutDropdown();
+      closeMenu();
+      navigateTo(ROUTES.RELEASES);
+    });
+
+    return {
+      isMenuOpen,
+      isAboutOpen,
+      toggleMenu,
+      handleDocsClick,
+      handleApiClick,
+      handleAboutClick,
+      handleGitHubClick,
+      handleReleasesClick,
+    };
   },
-  template: ({ isMenuOpen, toggleMenu, handleDocsClick, handleApiClick, handleGitHubClick }) => (
+  template: ({
+    isMenuOpen,
+    isAboutOpen,
+    toggleMenu,
+    handleDocsClick,
+    handleApiClick,
+    handleAboutClick,
+    handleGitHubClick,
+    handleReleasesClick,
+  }) => (
     <>
       <header class={HEADER_CLASSES.HEADER}>
         <div class={HEADER_CLASSES.CONTENT}>
@@ -47,6 +89,23 @@ export const Header = define({
             <Link to={ROUTES.API} class={HEADER_CLASSES.NAV_LINK}>
               API
             </Link>
+            <div class={`tagix-nav-item-wrapper ${isAboutOpen.value ? "is-open" : ""}`}>
+              <button class="tagix-nav-link tagix-nav-button" onClick={handleAboutClick}>
+                <span>About</span>
+                <img
+                  src={
+                    isAboutOpen.value
+                      ? "/icons/vt-flyout-button-text-icon-active.svg"
+                      : "/icons/vt-flyout-button-text-icon.svg"
+                  }
+                  alt="Toggle About"
+                  class="tagix-nav-icon"
+                  width="20"
+                  height="20"
+                />
+              </button>
+              <AboutDropdown />
+            </div>
           </nav>
 
           <button
@@ -69,6 +128,26 @@ export const Header = define({
         <a href="/api" class="tagix-mobile-menu-link" onClick={handleApiClick}>
           API
         </a>
+        <button
+          class={`tagix-mobile-menu-link tagix-mobile-menu-button ${isAboutOpen.value ? "is-open" : ""}`}
+          onClick={handleAboutClick}
+        >
+          <span>About</span>
+          <img
+            src="/icons/vt-flyout-button-text-icon.svg"
+            alt=""
+            class="tagix-mobile-chevron"
+            width="20"
+            height="20"
+          />
+        </button>
+        <div class={`tagix-mobile-nav-expand ${isAboutOpen.value ? "is-open" : ""}`}>
+          <div class="tagix-mobile-nav-content">
+            <a href="/releases" class="tagix-mobile-sub-link" onClick={handleReleasesClick}>
+              Releases
+            </a>
+          </div>
+        </div>
         <a
           href="https://github.com/chrismichaelps/tagix"
           target="_blank"

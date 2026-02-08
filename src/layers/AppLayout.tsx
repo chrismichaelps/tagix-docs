@@ -1,4 +1,5 @@
 import { Footer, Header } from "../components/Layout";
+
 import { define } from "@effuse/core";
 
 export const AppLayout = define({

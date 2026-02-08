@@ -1,5 +1,6 @@
 import { define, useHead } from "@effuse/core";
 import { Link } from "@effuse/router";
+import { version } from "../../../node_modules/tagix/package.json" with { type: "json" };
 import "./styles.css";
 
 interface HomePageScriptReturn {}
@@ -58,24 +59,15 @@ export const HomePage = define<{}, HomePageScriptReturn>({
           <div class="tagix-update-item">
             <div class="tagix-update-header">
               <span class="tagix-update-label">New</span>
-              <p class="tagix-update-title">Tagix v1.0.0</p>
-              <p class="tagix-update-date">Feb 3, 2026</p>
+              <p class="tagix-update-title">Tagix v{version}</p>
+              <p class="tagix-update-date">Feb 7, 2026</p>
             </div>
-            <p class="tagix-update-summary serif">
-              Tagix v1.0.0 is the first release to introduce our core type-safety architecture,
-              featuring Tagged Unions, exhaustive Pattern Matching, and fully Inferred Actions.
-            </p>
-            <a
-              class="tagix-update-link"
-              href="https://github.com/chrismichaelps/tagix/blob/master/CHANGELOG.md"
-              target="_blank"
-              rel="noopener"
-            >
+            <Link class="tagix-update-link" to="/releases">
               <span>Read more</span>
               <svg width="16" height="16" viewBox="0 0 21 21" fill="currentColor">
                 <path d="M4.14585 9.87492L14.4584 9.87492L9.60419 5.04158L10.5 4.14575L16.8542 10.4999L10.5 16.8541L9.60419 15.9583L14.4584 11.1249L4.14585 11.1249L4.14585 9.87492Z" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

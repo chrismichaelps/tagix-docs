@@ -11,7 +11,16 @@ export const Footer = () => (
           <h3 class={FOOTER_CLASSES.TITLE}>Site</h3>
           <ul class={FOOTER_CLASSES.LIST}>
             <li>
+              <Link to={ROUTES.HOME}>Home</Link>
+            </li>
+            <li>
               <Link to={ROUTES.DOCS}>Docs</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.API}>API</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.RELEASES}>Releases</Link>
             </li>
           </ul>
         </div>

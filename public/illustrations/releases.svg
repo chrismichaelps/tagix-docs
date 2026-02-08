@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="releases-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+
+  <!-- Background shape (matching privacy.svg) -->
+  <circle cx="500" cy="500" r="400" fill="#d97757" opacity="0.05" filter="url(#releases-blur)" />
+
+  <!-- Tag / Release Shape -->
+  <path d="M300 350 H 600 L 750 500 V 750 Q 750 800 700 800 H 350 Q 300 800 300 750 V 350" stroke="#141413"
+    stroke-width="30" stroke-linecap="round" stroke-linejoin="round" />
+
+  <path d="M600 350 V 450 Q 600 500 650 500 H 750" stroke="#141413" stroke-width="30" stroke-linecap="round"
+    stroke-linejoin="round" opacity="0.5" />
+
+  <!-- Version Lines -->
+  <path d="M400 600 H 600" stroke="#d97757" stroke-width="20" stroke-linecap="round" />
+  <path d="M400 700 H 550" stroke="#d97757" stroke-width="20" stroke-linecap="round" opacity="0.6" />
+
+  <!-- The "Dot" in the tag -->
+  <circle cx="400" cy="450" r="15" fill="#141413" />
+</svg>

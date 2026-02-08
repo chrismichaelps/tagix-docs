@@ -9,6 +9,7 @@ import { DisclaimerPage } from "../pages/Legal/Disclaimer";
 import { ContactPage } from "../pages/Legal/Contact";
 import { ApiPage } from "../pages/ApiPage";
 import { logger } from "../utils/logger";
+import { ReleasesPage } from "@/pages/Releases";
 
 const routes: RouteRecord[] = [
   { path: "/", name: "home", component: HomePage },
@@ -21,6 +22,11 @@ const routes: RouteRecord[] = [
     path: "/docs*",
     name: "docs",
     component: DocsPage,
+  },
+  {
+    path: "/releases",
+    name: "releases",
+    component: ReleasesPage,
   },
   { path: "*", name: "not-found", component: NotFoundPage },
 ];

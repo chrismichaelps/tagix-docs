@@ -30,6 +30,7 @@ export const ROUTES = {
   PRIVACY: "/privacy",
   DISCLAIMER: "/disclaimer",
   CONTACT: "/contact",
+  RELEASES: "/releases",
 } as const;
 
 export const EXTERNAL_LINKS = {

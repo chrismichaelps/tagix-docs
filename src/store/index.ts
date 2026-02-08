@@ -55,5 +55,12 @@ export {
 } from "./mobileMenu";
 
 export { apiStore, ApiState, type ApiStateType, searchApi, resetApi } from "./api";
+export {
+  aboutDropdownStore,
+  AboutDropdownState,
+  closeAboutDropdown,
+  toggleAboutDropdown,
+} from "./aboutDropdown";
+export { releasesStore, ReleasesState, fetchChangelog } from "./releases";
 
 export type { ApiItem } from "../content/api_data";
