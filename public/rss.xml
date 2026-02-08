@@ -7,6 +7,14 @@
     <language>en</language>
     
     <item>
+      <title>Tagix v1.0.1</title>
+      <link>https://tagix-docs.vercel.app/releases</link>
+      <description>Core stability release with critical bug fixes for deep merging, dispatch consistency, and performance optimizations.</description>
+      <pubDate>Sat, 07 Feb 2026 21:30:00 GMT</pubDate>
+      <guid>https://tagix-docs.vercel.app/releases#v1.0.1</guid>
+    </item>
+    
+    <item>
       <title>Type Safety</title>
       <link>https://tagix-docs.vercel.app/docs/type-safety</link>
       <description>Leverage TypeScript for compile-time correctness</description>
