@@ -1,4 +1,4 @@
-import { define, signal, computed, type Signal } from "@effuse/core";
+import { define, signal, computed, useHead, type Signal } from "@effuse/core";
 import { Link } from "@effuse/router";
 import { Ink } from "@effuse/ink";
 import { Sidebar } from "../../components/Sidebar";
@@ -53,6 +53,11 @@ export const DocsPage = define<{}, DocsPageScriptReturn>({
         const docContent = getDocContent(currentSlug.value);
         if (docContent) {
           setDocsPageReady(currentSlug.value);
+          const title = getDocTitle(currentSlug.value);
+          useHead({
+            title: `${title} | Tagix Documentation`,
+            description: `Learn how to use Tagix: ${title}. Strictly typed state management powered by Tagged Unions.`,
+          });
         } else {
           setDocsPageError("Documentation not found");
         }

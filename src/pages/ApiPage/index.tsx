@@ -1,4 +1,4 @@
-import { define, signal, effect, type Signal } from "@effuse/core";
+import { define, signal, effect, useHead, type Signal } from "@effuse/core";
 import { apiStore, ApiState, searchApi, type ApiStateType, type ApiItem } from "../../store/api";
 import { ApiHero } from "./components/ApiHero";
 import { FunctionItem } from "./components/FunctionItem";
@@ -14,6 +14,12 @@ interface ScriptReturn {
 
 export const ApiPage = define<{}, ScriptReturn>({
   script: () => {
+    useHead({
+      title: "API Reference | Tagix",
+      description:
+        "Complete API reference for Tagix. Explore functions, types, and utilities for type-safe state management.",
+    });
+
     const pageState = signal<ApiStateType>(apiStore.stateValue);
     const query = signal("");
     const grouped = signal<Record<string, ApiItem[]>>({});
