@@ -1,43 +1,25 @@
 import { Comment, DeclarationReflection, SignatureReflection, Reflection } from "typedoc";
-import {
-  none,
-  some,
-  fromNullableOption,
-  matchOption,
-  pipe,
-  isNonEmptyString,
-  type Option,
-} from "tagix";
-import type { ApiItem, ExtractResult } from "./types.ts";
+import { none, some, pipe, isNonEmptyString, matchOption, type Option } from "tagix";
+import type { ApiItem, ExtractResult } from "./types.js";
 
 export function getBestComment(ref: Reflection): Option<Comment> {
   if (ref.comment) return some(ref.comment);
-  if ("signatures" in ref) {
-    const signatures = (ref as DeclarationReflection).signatures;
-    if (signatures && signatures.length > 0) {
-      return fromNullableOption(signatures[0].comment);
-    }
-  }
-  return none();
+
+  const signatures = "signatures" in ref ? (ref as DeclarationReflection).signatures : undefined;
+  const firstSig = signatures?.[0];
+
+  return firstSig?.comment ? some(firstSig.comment) : none();
 }
 
-export function renderContent(
-  parts: Comment["summary"] | Comment["blockTags"][number]["content"] = []
-): string {
-  return parts
-    .map((part) =>
-      matchOption(fromNullableOption(part.kind), {
-        onNone: () => "",
-        onSome: (kind: string) => {
-          if (kind === "text") return (part as any).text;
-          if (kind === "code") return `\`${(part as any).text}\``;
-          if (kind === "inline-tag") return (part as any).text || (part as any).target?.name || "";
-          return "";
-        },
-      })
-    )
-    .join("");
-}
+const renderPart = (part: Comment["summary"][number]): string => {
+  if (part.kind === "text") return part.text;
+  if (part.kind === "code") return `\`${part.text}\``;
+  if (part.kind === "inline-tag") return part.text;
+  return "";
+};
+
+export const renderContent = (parts: Comment["summary"] = []): string =>
+  parts.map(renderPart).join("");
 
 export function extractDescriptionAndTags(
   ref: DeclarationReflection | SignatureReflection
@@ -46,42 +28,48 @@ export function extractDescriptionAndTags(
 
   return matchOption(commentOpt, {
     onNone: () => ({ summary: "", tags: [] }),
-    onSome: (comment: Comment) => {
+    onSome: (comment) => {
       const summary = renderContent(comment.summary).trim();
+
       const blockTags = comment.blockTags.map((tag) => {
-        const tagName = tag.tag.startsWith("@") ? tag.tag : `@${tag.tag}`;
+        const name = tag.tag.startsWith("@") ? tag.tag : `@${tag.tag}`;
         const content = renderContent(tag.content).trim();
-        return ["@example", "@remarks", "@returns", "@throws"].includes(tagName)
+
+        return ["@example", "@remarks", "@returns", "@throws"].includes(name)
           ? content
-            ? `${tagName}\n${content}`
-            : tagName
+            ? `${name}\n${content}`
+            : name
           : content
-            ? `${tagName} ${content}`
-            : tagName;
+            ? `${name} ${content}`
+            : name;
       });
-      const modifierTags = (ref as any).modifierTags || [];
-      const allTags = [...modifierTags, ...blockTags].filter(isNonEmptyString);
-      return { summary, tags: allTags };
+
+      const modifierTags = Array.from(comment.modifierTags).map((t) => `@${t}`);
+      const tags = [...modifierTags, ...blockTags].filter(isNonEmptyString);
+
+      return { summary, tags };
     },
   });
 }
 
-export function buildDescription(summary: string, tags: string[]): string {
-  return pipe(
+export const buildDescription = (summary: string, tags: string[]): string =>
+  pipe(
     summary,
     (s) => (tags.length > 0 ? (s ? `${s}\n\n` : "") + tags.join("\n\n") : s),
     (s) => s.trim()
   );
-}
 
-export function deduplicateDocs(docs: ApiItem[]): ApiItem[] {
-  const uniqueDocs = new Map<string, ApiItem>();
+export const deduplicateDocs = (docs: ApiItem[]): ApiItem[] => {
+  const seen = new Map<string, ApiItem>();
+
   for (const doc of docs) {
     const key = `${doc.name}:${doc.kind}`;
-    const existing = uniqueDocs.get(key);
-    if (!existing || existing.description.length < doc.description.length) {
-      uniqueDocs.set(key, doc);
+    const prev = seen.get(key);
+
+    if (!prev || prev.description.length < doc.description.length) {
+      seen.set(key, doc);
     }
   }
-  return Array.from(uniqueDocs.values()).sort((a, b) => a.name.localeCompare(b.name));
-}
+
+  return Array.from(seen.values()).sort((a, b) => a.name.localeCompare(b.name));
+};
