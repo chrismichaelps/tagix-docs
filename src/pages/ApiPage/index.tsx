@@ -68,7 +68,7 @@ export const ApiPage = define<{}, ScriptReturn>({
           ))}
         </div>
       ) : (
-        <div class="tagix-grid">
+        <div class="tagix-api-grid">
           {items.map((item) => (
             <TypeItem key={item.name} item={item} />
           ))}

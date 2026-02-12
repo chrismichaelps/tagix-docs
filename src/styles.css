@@ -1344,6 +1344,46 @@ a:hover {
   padding-left: 0.75rem;
 }
 
+.tagix-api-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .tagix-api-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .tagix-api-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.tagix-api-grid .tagix-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.tagix-api-grid .tagix-card pre {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.tagix-api-grid .tagix-card pre::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tagix-api-grid .tagix-card pre::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
 .docs-toc-link {
   font-size: 0.8125rem;
   color: var(--color-docs-text-muted);
