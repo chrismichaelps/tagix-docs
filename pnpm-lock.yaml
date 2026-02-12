@@ -49,13 +49,13 @@ importers:
     devDependencies:
       "@effuse/compiler":
         specifier: 1.0.3
-        version: 1.0.3(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2))
+        version: 1.0.3(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
       "@eslint/js":
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.0.0(jiti@2.6.1))
       "@tailwindcss/vite":
         specifier: ^4.1.18
-        version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2))
+        version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
       "@types/node":
         specifier: ^25.2.3
         version: 25.2.3
@@ -80,12 +80,15 @@ importers:
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
+      typedoc:
+        specifier: ^0.28.16
+        version: 0.28.16(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
         specifier: ^7.3.1
-        version: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)
+        version: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
 
 packages:
   "@babel/code-frame@7.29.0":
@@ -546,6 +549,12 @@ packages:
         integrity: sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A==,
       }
 
+  "@gerrit0/mini-shiki@3.22.0":
+    resolution:
+      {
+        integrity: sha512-jMpciqEVUBKE1QwU64S4saNMzpsSza6diNCk4MWAeCxO2+LFi2FIFmL2S0VDLzEJCxuvCbU783xi8Hp/gkM5CQ==,
+      }
+
   "@humanfs/core@0.19.1":
     resolution:
       {
@@ -930,6 +939,36 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  "@shikijs/engine-oniguruma@3.22.0":
+    resolution:
+      {
+        integrity: sha512-DyXsOG0vGtNtl7ygvabHd7Mt5EY8gCNqR9Y7Lpbbd/PbJvgWrqaKzH1JW6H6qFkuUa8aCxoiYVv8/YfFljiQxA==,
+      }
+
+  "@shikijs/langs@3.22.0":
+    resolution:
+      {
+        integrity: sha512-x/42TfhWmp6H00T6uwVrdTJGKgNdFbrEdhaDwSR5fd5zhQ1Q46bHq9EO61SCEWJR0HY7z2HNDMaBZp8JRmKiIA==,
+      }
+
+  "@shikijs/themes@3.22.0":
+    resolution:
+      {
+        integrity: sha512-o+tlOKqsr6FE4+mYJG08tfCFDS+3CG20HbldXeVoyP+cYSUxDhrFf3GPjE60U55iOkkjbpY2uC3It/eeja35/g==,
+      }
+
+  "@shikijs/types@3.22.0":
+    resolution:
+      {
+        integrity: sha512-491iAekgKDBFE67z70Ok5a8KBMsQ2IJwOWw3us/7ffQkIBCyOQfm/aNwVMBUriP02QshIfgHCBSIYAl3u2eWjg==,
+      }
+
+  "@shikijs/vscode-textmate@10.0.2":
+    resolution:
+      {
+        integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==,
+      }
+
   "@standard-schema/spec@1.1.0":
     resolution:
       {
@@ -1087,6 +1126,12 @@ packages:
         integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==,
       }
 
+  "@types/hast@3.0.4":
+    resolution:
+      {
+        integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==,
+      }
+
   "@types/json-schema@7.0.15":
     resolution:
       {
@@ -1103,6 +1148,12 @@ packages:
     resolution:
       {
         integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==,
+      }
+
+  "@types/unist@3.0.3":
+    resolution:
+      {
+        integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==,
       }
 
   acorn-jsx@5.3.2:
@@ -1127,6 +1178,12 @@ packages:
         integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==,
       }
 
+  argparse@2.0.1:
+    resolution:
+      {
+        integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==,
+      }
+
   autoprefixer@10.4.24:
     resolution:
       {
@@ -1137,12 +1194,24 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
+  balanced-match@1.0.2:
+    resolution:
+      {
+        integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==,
+      }
+
   baseline-browser-mapping@2.9.19:
     resolution:
       {
         integrity: sha512-ipDqC8FrAl/76p2SSWKSI+H9tFwm7vYqXQrItCuiVPt26Km0jS+NzSsBWAaBusvSbQcfJG+JitdMm+wZAgTYqg==,
       }
     hasBin: true
+
+  brace-expansion@2.0.2:
+    resolution:
+      {
+        integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==,
+      }
 
   browserslist@4.28.1:
     resolution:
@@ -1215,6 +1284,13 @@ packages:
         integrity: sha512-phv3E1Xl4tQOShqSte26C7Fl84EwUdZsyOuSSk9qtAGyyQs2s3jJzComh+Abf4g187lUUAvH+H26omrqia2aGg==,
       }
     engines: { node: ">=10.13.0" }
+
+  entities@4.5.0:
+    resolution:
+      {
+        integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==,
+      }
+    engines: { node: ">=0.12" }
 
   esbuild@0.27.3:
     resolution:
@@ -1647,6 +1723,12 @@ packages:
       }
     engines: { node: ">= 12.0.0" }
 
+  linkify-it@5.0.0:
+    resolution:
+      {
+        integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==,
+      }
+
   locate-path@6.0.0:
     resolution:
       {
@@ -1654,10 +1736,29 @@ packages:
       }
     engines: { node: ">=10" }
 
+  lunr@2.3.9:
+    resolution:
+      {
+        integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==,
+      }
+
   magic-string@0.30.21:
     resolution:
       {
         integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==,
+      }
+
+  markdown-it@14.1.1:
+    resolution:
+      {
+        integrity: sha512-BuU2qnTti9YKgK5N+IeMubp14ZUKUUw7yeJbkjtosvHiP0AZ5c8IAgEMk79D0eC8F23r4Ac/q8cAIFdm2FtyoA==,
+      }
+    hasBin: true
+
+  mdurl@2.0.0:
+    resolution:
+      {
+        integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==,
       }
 
   minimatch@10.1.2:
@@ -1666,6 +1767,13 @@ packages:
         integrity: sha512-fu656aJ0n2kcXwsnwnv9g24tkU5uSmOlTjd6WyyaKm2Z+h1qmY6bAjrcaIxF/BslFqbZ8UBtbJi7KgQOZD2PTw==,
       }
     engines: { node: 20 || >=22 }
+
+  minimatch@9.0.5:
+    resolution:
+      {
+        integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==,
+      }
+    engines: { node: ">=16 || 14 >=14.17" }
 
   motion-dom@12.34.0:
     resolution:
@@ -1831,6 +1939,13 @@ packages:
       }
     engines: { node: ">=6" }
 
+  punycode.js@2.3.1:
+    resolution:
+      {
+        integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==,
+      }
+    engines: { node: ">=6" }
+
   punycode@2.3.1:
     resolution:
       {
@@ -1918,6 +2033,16 @@ packages:
       }
     engines: { node: ">= 0.8.0" }
 
+  typedoc@0.28.16:
+    resolution:
+      {
+        integrity: sha512-x4xW77QC3i5DUFMBp0qjukOTnr/sSg+oEs86nB3LjDslvAmwe/PUGDWbe3GrIqt59oTqoXK5GRK9tAa0sYMiog==,
+      }
+    engines: { node: ">= 18", pnpm: ">= 10" }
+    hasBin: true
+    peerDependencies:
+      typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
+
   typescript@5.9.3:
     resolution:
       {
@@ -1925,6 +2050,12 @@ packages:
       }
     engines: { node: ">=14.17" }
     hasBin: true
+
+  uc.micro@2.1.0:
+    resolution:
+      {
+        integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==,
+      }
 
   undici-types@7.16.0:
     resolution:
@@ -2005,6 +2136,14 @@ packages:
       }
     engines: { node: ">=0.10.0" }
 
+  yaml@2.8.2:
+    resolution:
+      {
+        integrity: sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A==,
+      }
+    engines: { node: ">= 14.6" }
+    hasBin: true
+
   yocto-queue@0.1.0:
     resolution:
       {
@@ -2078,7 +2217,7 @@ snapshots:
       msgpackr: 1.11.8
       multipasta: 0.2.7
 
-  "@effuse/compiler@1.0.3(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2))":
+  "@effuse/compiler@1.0.3(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))":
     dependencies:
       "@babel/generator": 7.29.1
       "@babel/parser": 7.29.0
@@ -2086,7 +2225,7 @@ snapshots:
       "@babel/types": 7.29.0
       effect: 3.19.16
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -2235,6 +2374,14 @@ snapshots:
   "@fontsource/geist-mono@5.2.7": {}
 
   "@fontsource/geist-sans@5.2.5": {}
+
+  "@gerrit0/mini-shiki@3.22.0":
+    dependencies:
+      "@shikijs/engine-oniguruma": 3.22.0
+      "@shikijs/langs": 3.22.0
+      "@shikijs/themes": 3.22.0
+      "@shikijs/types": 3.22.0
+      "@shikijs/vscode-textmate": 10.0.2
 
   "@humanfs/core@0.19.1": {}
 
@@ -2393,6 +2540,26 @@ snapshots:
   "@rollup/rollup-win32-x64-msvc@4.57.1":
     optional: true
 
+  "@shikijs/engine-oniguruma@3.22.0":
+    dependencies:
+      "@shikijs/types": 3.22.0
+      "@shikijs/vscode-textmate": 10.0.2
+
+  "@shikijs/langs@3.22.0":
+    dependencies:
+      "@shikijs/types": 3.22.0
+
+  "@shikijs/themes@3.22.0":
+    dependencies:
+      "@shikijs/types": 3.22.0
+
+  "@shikijs/types@3.22.0":
+    dependencies:
+      "@shikijs/vscode-textmate": 10.0.2
+      "@types/hast": 3.0.4
+
+  "@shikijs/vscode-textmate@10.0.2": {}
+
   "@standard-schema/spec@1.1.0": {}
 
   "@tailwindcss/node@4.1.18":
@@ -2456,16 +2623,20 @@ snapshots:
       "@tailwindcss/oxide-win32-arm64-msvc": 4.1.18
       "@tailwindcss/oxide-win32-x64-msvc": 4.1.18
 
-  "@tailwindcss/vite@4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2))":
+  "@tailwindcss/vite@4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))":
     dependencies:
       "@tailwindcss/node": 4.1.18
       "@tailwindcss/oxide": 4.1.18
       tailwindcss: 4.1.18
-      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
 
   "@types/esrecurse@4.3.1": {}
 
   "@types/estree@1.0.8": {}
+
+  "@types/hast@3.0.4":
+    dependencies:
+      "@types/unist": 3.0.3
 
   "@types/json-schema@7.0.15": {}
 
@@ -2474,6 +2645,8 @@ snapshots:
       undici-types: 7.16.0
 
   "@types/prismjs@1.26.6": {}
+
+  "@types/unist@3.0.3": {}
 
   acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:
@@ -2488,6 +2661,8 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
+  argparse@2.0.1: {}
+
   autoprefixer@10.4.24(postcss@8.5.6):
     dependencies:
       browserslist: 4.28.1
@@ -2497,7 +2672,13 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
+  balanced-match@1.0.2: {}
+
   baseline-browser-mapping@2.9.19: {}
+
+  brace-expansion@2.0.2:
+    dependencies:
+      balanced-match: 1.0.2
 
   browserslist@4.28.1:
     dependencies:
@@ -2536,6 +2717,8 @@ snapshots:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.3.0
+
+  entities@4.5.0: {}
 
   esbuild@0.27.3:
     optionalDependencies:
@@ -2773,17 +2956,38 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.30.2
       lightningcss-win32-x64-msvc: 1.30.2
 
+  linkify-it@5.0.0:
+    dependencies:
+      uc.micro: 2.1.0
+
   locate-path@6.0.0:
     dependencies:
       p-locate: 5.0.0
+
+  lunr@2.3.9: {}
 
   magic-string@0.30.21:
     dependencies:
       "@jridgewell/sourcemap-codec": 1.5.5
 
+  markdown-it@14.1.1:
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
+
+  mdurl@2.0.0: {}
+
   minimatch@10.1.2:
     dependencies:
       "@isaacs/brace-expansion": 5.0.1
+
+  minimatch@9.0.5:
+    dependencies:
+      brace-expansion: 2.0.2
 
   motion-dom@12.34.0:
     dependencies:
@@ -2866,6 +3070,8 @@ snapshots:
 
   prismjs@1.30.0: {}
 
+  punycode.js@2.3.1: {}
+
   punycode@2.3.1: {}
 
   pure-rand@6.1.0: {}
@@ -2928,7 +3134,18 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
 
+  typedoc@0.28.16(typescript@5.9.3):
+    dependencies:
+      "@gerrit0/mini-shiki": 3.22.0
+      lunr: 2.3.9
+      markdown-it: 14.1.1
+      minimatch: 9.0.5
+      typescript: 5.9.3
+      yaml: 2.8.2
+
   typescript@5.9.3: {}
+
+  uc.micro@2.1.0: {}
 
   undici-types@7.16.0: {}
 
@@ -2942,7 +3159,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2):
+  vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2):
     dependencies:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2955,11 +3172,14 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.30.2
+      yaml: 2.8.2
 
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
 
   word-wrap@1.2.5: {}
+
+  yaml@2.8.2: {}
 
   yocto-queue@0.1.0: {}
