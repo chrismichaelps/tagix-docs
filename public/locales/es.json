@@ -110,25 +110,106 @@
     "terms": {
       "title": "Términos de Servicio",
       "updated": "Última actualización: Febrero 2026",
+      "contactPageLink": "página de contacto",
       "head": {
         "title": "Términos de Servicio - Tagix",
         "description": "Términos de servicio para el uso de Tagix, la biblioteca de gestión de estado con seguridad de tipos."
+      },
+      "sections": {
+        "acceptance": {
+          "title": "1. Aceptación de Términos",
+          "content": "Al instalar, acceder o usar la biblioteca de software Tagix, usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con estos términos, no utilice la biblioteca en sus proyectos."
+        },
+        "license": {
+          "title": "2. Licencia",
+          "content": "Tagix se publica bajo la Licencia MIT. Usted es libre de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, sujeto a las condiciones de la Licencia MIT."
+        },
+        "disclaimer": {
+          "title": "3. Renuncia de Garantías",
+          "content": "Tagix se proporciona \"tal cual\", sin garantía de ningún tipo, expresa o implícita, incluidas, entre otras, las garantías de comerciabilidad, idoneidad para un propósito particular y no infracción."
+        },
+        "liability": {
+          "title": "4. Limitación de Responsabilidad",
+          "content": "En ningún caso los autores o titulares de los derechos de autor serán responsables de ninguna reclamación, daño u otra responsabilidad, ya sea en una acción contractual, extracontractual o de otro tipo, que surja de, se derive de o esté relacionada con el software o el uso u otros tratos en el software."
+        },
+        "changes": {
+          "title": "5. Cambios en los Términos",
+          "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de Tagix después de cualquier cambio constituye la aceptación de los nuevos términos."
+        },
+        "contact": {
+          "title": "6. Contacto",
+          "content": "Si tiene preguntas sobre estos términos, visite nuestra {link}"
+        }
       }
     },
     "privacy": {
       "title": "Política de Privacidad",
       "updated": "Última actualización: Febrero 2026",
+      "contactPageLink": "página de contacto",
       "head": {
         "title": "Política de Privacidad - Tagix",
         "description": "Política de privacidad para Tagix, la biblioteca de gestión de estado con seguridad de tipos."
+      },
+      "sections": {
+        "collect": {
+          "title": "1. Información que Recopilamos",
+          "content": "Tagix es una biblioteca JavaScript del lado del cliente. No recopilamos, almacenamos ni procesamos ninguna información personal de los usuarios de la biblioteca."
+        },
+        "website": {
+          "title": "2. Sitio Web de Documentación",
+          "content": "Nuestro sitio web de documentación es un sitio estático. No utilizamos cookies de seguimiento ni servicios de análisis."
+        },
+        "thirdParty": {
+          "title": "3. Servicios de Terceros",
+          "content": "Tagix se distribuye a través de npm (Node Package Manager). Cuando instala Tagix, la política de privacidad de npm se aplica a esa interacción. Le recomendamos que revise las prácticas de privacidad de npm."
+        },
+        "openSource": {
+          "title": "4. Código Abierto",
+          "content": "Tagix es software de código abierto. El código fuente está disponible públicamente en GitHub, y las contribuciones están sujetas a la política de privacidad de GitHub."
+        },
+        "changes": {
+          "title": "5. Cambios a esta Política",
+          "content": "Es posible que actualicemos esta política de privacidad de vez en cuando. Cualquier cambio se publicará en esta página con una fecha de revisión actualizada."
+        },
+        "contact": {
+          "title": "6. Contacto",
+          "content": "Para preguntas relacionadas con la privacidad, visite nuestra {link}"
+        }
       }
     },
     "disclaimer": {
       "title": "Descargo de Responsabilidad",
       "updated": "Última actualización: Febrero 2026",
+      "contactPageLink": "página de contacto",
       "head": {
         "title": "Descargo de Responsabilidad - Tagix",
         "description": "Descargo de responsabilidad para Tagix, la biblioteca de gestión de estado con seguridad de tipos."
+      },
+      "sections": {
+        "general": {
+          "title": "Descargo de Responsabilidad General",
+          "content": "La información proporcionada por Tagix y su documentación tiene únicamente fines informativos generales. Si bien nos esforzamos por mantener la información actualizada y precisa, no realizamos representaciones ni garantías de ningún tipo, expresas o implícitas, sobre la integridad, exactitud, confiabilidad, idoneidad o disponibilidad de la biblioteca o la documentación."
+        },
+        "advice": {
+          "title": "Sin Asesoramiento Profesional",
+          "content": "El contenido de nuestra documentación se proporciona con fines de referencia técnica y educativos relacionados con el desarrollo de software. No constituye asesoramiento profesional de consultoría de TI o arquitectura para sus casos de uso específicos."
+        },
+        "links": {
+          "title": "Enlaces Externos",
+          "content": "Nuestra documentación puede contener enlaces a sitios web externos. No tenemos control sobre el contenido y la disponibilidad de esos sitios y no somos responsables de su contenido o prácticas."
+        },
+        "risk": {
+          "title": "Uso bajo su propio Riesgo",
+          "content": "El uso de Tagix es bajo su propio riesgo. La biblioteca se proporciona sin garantías ni avales. En relación con la biblioteca, no ofrecemos garantías de ningún tipo, ya sean expresas o implícitas."
+        },
+        "liability": {
+          "title": "Limitación de Responsabilidad",
+          "content": "En la medida máxima permitida por la ley, excluimos toda responsabilidad por cualquier pérdida o daño que surja de o en relación con su uso de Tagix."
+        },
+        "contact": {
+          "title": "Contacto",
+          "content": "Si tiene preguntas sobre este descargo de responsabilidad, visite nuestra {link}"
+        }
       }
     },
     "contact": {
@@ -137,6 +218,17 @@
       "head": {
         "title": "Contacto - Tagix",
         "description": "Información de contacto para Tagix, la biblioteca de gestión de estado con seguridad de tipos."
+      },
+      "intro": "Nos encantaría saber de usted. Ya sea que tenga una pregunta sobre las características, los precios o cualquier otra cosa, nuestro equipo está listo para responder a todas sus preguntas.",
+      "sections": {
+        "getInTouch": {
+          "title": "Póngase en Contacto",
+          "content": "Para cualquier consulta, envíenos un correo electrónico directamente:"
+        },
+        "github": {
+          "title": "GitHub",
+          "content": "Informe errores, solicite nuevas funcionalidades o contribuya a Tagix en nuestro repositorio de GitHub:"
+        }
       }
     }
   },

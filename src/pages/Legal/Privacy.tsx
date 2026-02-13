@@ -44,41 +44,25 @@ export const PrivacyPage = define<{}, ScriptReturn>({
             </div>
 
             <div class="tagix-legal-content">
-              <h2>1. Information We Collect</h2>
-              <p class="serif">
-                Tagix is a client-side JavaScript library. We do not collect, store, or process any
-                personal information from users of the library.
-              </p>
+              <h2>{() => t.value?.sections.collect.title}</h2>
+              <p class="serif">{() => t.value?.sections.collect.content}</p>
 
-              <h2>2. Documentation Website</h2>
-              <p class="serif">
-                Our documentation website is a static site. We do not use any tracking cookies or
-                analytics services.
-              </p>
+              <h2>{() => t.value?.sections.website.title}</h2>
+              <p class="serif">{() => t.value?.sections.website.content}</p>
 
-              <h2>3. Third-Party Services</h2>
-              <p class="serif">
-                Tagix is distributed through npm (Node Package Manager). When you install Tagix,
-                npm's privacy policy applies to that interaction. We encourage you to review npm's
-                privacy practices.
-              </p>
+              <h2>{() => t.value?.sections.thirdParty.title}</h2>
+              <p class="serif">{() => t.value?.sections.thirdParty.content}</p>
 
-              <h2>4. Open Source</h2>
-              <p class="serif">
-                Tagix is open source software. The source code is publicly available on GitHub, and
-                contributions are subject to GitHub's privacy policy.
-              </p>
+              <h2>{() => t.value?.sections.openSource.title}</h2>
+              <p class="serif">{() => t.value?.sections.openSource.content}</p>
 
-              <h2>5. Changes to This Policy</h2>
-              <p class="serif">
-                We may update this privacy policy from time to time. Any changes will be posted on
-                this page with an updated revision date.
-              </p>
+              <h2>{() => t.value?.sections.changes.title}</h2>
+              <p class="serif">{() => t.value?.sections.changes.content}</p>
 
-              <h2>6. Contact</h2>
+              <h2>{() => t.value?.sections.contact.title}</h2>
               <p class="serif">
-                For privacy-related questions, please visit our{" "}
-                <Link to="/contact">contact page</Link>.
+                {() => t.value?.sections.contact.content.replace("{link}", "")}
+                <Link to="/contact">{() => t.value?.contactPageLink}</Link>.
               </p>
             </div>
           </div>

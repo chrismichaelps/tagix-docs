@@ -43,24 +43,21 @@ export const ContactPage = define<{}, ScriptReturn>({
             </div>
 
             <div class="tagix-legal-content">
-              <p class="serif">
-                We'd love to hear from you. Whether you have a question about features, pricing, or
-                anything else, our team is ready to answer all your questions.
-              </p>
+              <p class="serif">{() => t.value?.intro}</p>
 
               <section>
-                <h2>Get in Touch</h2>
+                <h2>{() => t.value?.sections.getInTouch.title}</h2>
                 <p class="serif">
-                  For any inquiries, please email us directly:
+                  {() => t.value?.sections.getInTouch.content}
                   <br />
                   <a href="mailto:chrisperezsantiago1@gmail.com">chrisperezsantiago1@gmail.com</a>
                 </p>
               </section>
 
               <section>
-                <h2>GitHub</h2>
+                <h2>{() => t.value?.sections.github.title}</h2>
                 <p class="serif">
-                  Report bugs, request features, or contribute to Tagix on our GitHub repository:
+                  {() => t.value?.sections.github.content}
                   <br />
                   <a href="https://github.com/chrismichaelps/tagix" target="_blank" rel="noopener">
                     https://github.com/chrismichaelps/tagix
