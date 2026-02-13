@@ -2,8 +2,10 @@
   "nav": {
     "home": "Home",
     "docs": "Docs",
+    "api": "API",
     "about": "About",
-    "releases": "Releases"
+    "releases": "Releases",
+    "github": "GitHub"
   },
   "sidebar": {
     "gettingStarted": "Getting Started",
@@ -23,7 +25,132 @@
     "stateDefinitions": "State Definitions",
     "stateMachines": "State Machines",
     "typeSafety": "Type Safety",
-    "testing": "Testing"
+    "testing": "Testing",
+    "stateManagement": "State Management",
+    "uncategorized": "Uncategorized"
+  },
+  "home": {
+    "head": {
+      "title": "Tagix - Type-Safe State Management",
+      "description": "Strictly typed state management powered by Tagged Unions, Inferred Actions, and exhaustive Pattern Matching."
+    },
+    "hero": {
+      "tagline": "Strictly typed state management powered by Tagged Unions, Inferred Actions, and exhaustive Pattern Matching.",
+      "getStarted": "Get Started",
+      "viewOnGithub": "View on GitHub"
+    },
+    "releases": {
+      "title": "Releases",
+      "new": "New",
+      "readMore": "Read more"
+    },
+    "features": {
+      "title": "Type Safety by Design",
+      "subtitle": "Built to leverage TypeScript's control flow analysis for robust application state",
+      "taggedUnions": {
+        "title": "Tagged Unions",
+        "description": "Define state as mathematically exhaustive discriminated unions. Impossible states become compile-time errors."
+      },
+      "inferredActions": {
+        "title": "Inferred Actions",
+        "description": "Declare actions with automatic type inference. The compiler derives payload and reducer types directly from your implementation."
+      },
+      "patternMatching": {
+        "title": "Pattern Matching",
+        "description": "Enforce handling of all state variants. TypeScript's control flow analysis guarantees your application logic is exhaustive."
+      }
+    }
+  },
+  "api": {
+    "head": {
+      "title": "API Reference | Tagix",
+      "description": "Complete API reference for Tagix. Explore functions, types, and utilities for type-safe state management."
+    },
+    "hero": {
+      "title": "API Reference",
+      "tagline": "Complete generated documentation for the Tagix library actions, types, and interfaces.",
+      "searchPlaceholder": "Search API..."
+    },
+    "notFound": "No API items found matching \"{query}\"",
+    "groups": {
+      "functions": "Functions",
+      "types": "Types",
+      "interfaces": "Interfaces",
+      "classes": "Classes"
+    }
+  },
+  "releases": {
+    "head": {
+      "title": "Releases - Tagix",
+      "description": "Tagix release history and changelog. Type-safe state management powered by Tagged Unions."
+    },
+    "hero": {
+      "title": "Releases",
+      "tagline": "Tagix release history and changelog. Type-safe state management powered by Tagged Unions."
+    }
+  },
+  "footer": {
+    "sections": {
+      "site": "Site",
+      "social": "Social",
+      "legal": "Legal"
+    },
+    "links": {
+      "rss": "RSS Feed",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "disclaimer": "Disclaimer",
+      "contact": "Contact"
+    },
+    "latestVersion": "Latest version: {version}",
+    "builtWith": "Built with",
+    "copyright": "© 2026 Tagix. MIT License."
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: February 2026",
+      "head": {
+        "title": "Terms of Service - Tagix",
+        "description": "Terms of service for using Tagix, the type-safe state management library."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: February 2026",
+      "head": {
+        "title": "Privacy Policy - Tagix",
+        "description": "Privacy policy for Tagix, the type-safe state management library."
+      }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "updated": "Last updated: February 2026",
+      "head": {
+        "title": "Disclaimer - Tagix",
+        "description": "Disclaimer for Tagix, the type-safe state management library."
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "updated": "Last updated: February 2026",
+      "head": {
+        "title": "Contact - Tagix",
+        "description": "Contact information for Tagix, the type-safe state management library."
+      }
+    }
+  },
+  "notFound": {
+    "head": {
+      "title": "Page Not Found | Tagix",
+      "description": "The page you are looking for does not exist."
+    },
+    "hero": {
+      "title": "Page not found",
+      "tagline": "The page you are looking for doesn't exist or has been moved.",
+      "returnHome": "Return Home",
+      "viewDocs": "View Documentation"
+    }
   },
   "common": {
     "loading": "Loading...",
