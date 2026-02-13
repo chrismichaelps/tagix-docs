@@ -1,4 +1,4 @@
-import { define, computed, type Signal } from "@effuse/core";
+import { define, computed } from "@effuse/core";
 import { Link, useRoute } from "@effuse/router";
 import { i18nStore } from "../../store/appI18n";
 import { buildNavigation, isSlugActive } from "./utils";

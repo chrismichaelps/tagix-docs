@@ -1,4 +1,4 @@
-import { define, signal, computed, type Signal } from "@effuse/core";
+import { define, signal, computed } from "@effuse/core";
 import { Link } from "@effuse/router";
 import { navigateTo } from "@effuse/router";
 import { HEADER_CLASSES, ROUTES, ASSETS } from "./constants";
