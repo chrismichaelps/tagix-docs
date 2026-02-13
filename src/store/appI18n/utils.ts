@@ -1,4 +1,4 @@
-import { taggedEnum, tryCatchAsync, matchTag } from "tagix";
+import { taggedEnum, tryCatchAsync } from "tagix";
 import { I18nLoadError } from "./errors";
 import { LOCALES_PATH } from "./constants";
 
