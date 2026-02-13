@@ -1957,3 +1957,159 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+.tagix-lang-selector-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tagix-lang-selector-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--color-slate-medium);
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.tagix-lang-selector-button:hover {
+  color: var(--color-slate-dark);
+}
+
+.tagix-lang-selector-button .tagix-nav-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.tagix-lang-selector-button:hover .tagix-nav-icon {
+  opacity: 1;
+}
+
+.tagix-lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.75rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  min-width: 220px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+.tagix-lang-selector-wrapper.is-open .tagix-lang-dropdown {
+  display: flex;
+}
+
+.tagix-lang-list {
+  padding: 0.5rem;
+}
+
+.tagix-lang-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  color: #3c3c43;
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.tagix-lang-item:hover {
+  background: #f6f6f7;
+}
+
+.tagix-lang-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tagix-lang-item-arrow {
+  font-size: 0.75rem;
+  color: #3c3c434d;
+  transition: transform 0.15s ease;
+}
+
+.tagix-lang-item:hover .tagix-lang-item-arrow {
+  color: #3c3c4399;
+  transform: translate(1px, -1px);
+}
+
+.tagix-lang-item.is-active {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.tagix-mobile-lang-selector {
+  padding: 0.5rem 1.5rem;
+}
+
+.tagix-mobile-lang-selector .tagix-lang-selector-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tagix-mobile-lang-selector .tagix-lang-selector-button {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border: none;
+  background: transparent;
+  color: #3c3c4399;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  cursor: default;
+}
+
+.tagix-mobile-lang-selector .tagix-lang-selector-button::after {
+  content: "Language";
+}
+
+.tagix-mobile-lang-selector .tagix-lang-dropdown {
+  position: static;
+  display: flex;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  min-width: 100%;
+  margin-top: 0;
+  animation: none;
+}
+
+.tagix-mobile-lang-selector .tagix-lang-item {
+  padding: 0.75rem 0;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

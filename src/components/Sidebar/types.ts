@@ -21,4 +21,5 @@ export interface SidebarScriptReturn {
   isLinkActive: (slug: string) => boolean;
   isOpen?: Signal<boolean>;
   handleLinkClick: () => void;
+  t: Signal<any>;
 }

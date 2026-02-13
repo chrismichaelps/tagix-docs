@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@effuse/core": "1.1.0",
+    "@effuse/i18n": "^1.0.4",
     "@effuse/ink": "^1.0.4",
     "@effuse/router": "1.1.0",
     "@effuse/store": "1.0.3",

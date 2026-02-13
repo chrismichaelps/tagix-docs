@@ -1,0 +1,253 @@
+{
+  "nav": {
+    "home": "Home",
+    "docs": "Docs",
+    "api": "API",
+    "about": "About",
+    "releases": "Releases",
+    "github": "GitHub"
+  },
+  "sidebar": {
+    "gettingStarted": "Getting Started",
+    "installation": "Installation",
+    "quickStart": "Quick Start",
+    "coreConcepts": "Core Concepts",
+    "architecture": "Architecture",
+    "features": "Features",
+    "actions": "Actions",
+    "asyncActions": "Async Actions",
+    "selectors": "Selectors",
+    "middleware": "Middleware",
+    "context": "Context",
+    "errorHandling": "Error Handling",
+    "hooks": "Hooks",
+    "advanced": "Advanced",
+    "stateDefinitions": "State Definitions",
+    "stateMachines": "State Machines",
+    "typeSafety": "Type Safety",
+    "testing": "Testing",
+    "stateManagement": "State Management",
+    "uncategorized": "Uncategorized"
+  },
+  "home": {
+    "head": {
+      "title": "Tagix - Type-Safe State Management",
+      "description": "Strictly typed state management powered by Tagged Unions, Inferred Actions, and exhaustive Pattern Matching."
+    },
+    "hero": {
+      "tagline": "Strictly typed state management powered by Tagged Unions, Inferred Actions, and exhaustive Pattern Matching.",
+      "getStarted": "Get Started",
+      "viewOnGithub": "View on GitHub"
+    },
+    "releases": {
+      "title": "Releases",
+      "new": "New",
+      "readMore": "Read more"
+    },
+    "features": {
+      "title": "Type Safety by Design",
+      "subtitle": "Built to leverage TypeScript's control flow analysis for robust application state",
+      "taggedUnions": {
+        "title": "Tagged Unions",
+        "description": "Define state as mathematically exhaustive discriminated unions. Impossible states become compile-time errors."
+      },
+      "inferredActions": {
+        "title": "Inferred Actions",
+        "description": "Declare actions with automatic type inference. The compiler derives payload and reducer types directly from your implementation."
+      },
+      "patternMatching": {
+        "title": "Pattern Matching",
+        "description": "Enforce handling of all state variants. TypeScript's control flow analysis guarantees your application logic is exhaustive."
+      }
+    }
+  },
+  "api": {
+    "head": {
+      "title": "API Reference | Tagix",
+      "description": "Complete API reference for Tagix. Explore functions, types, and utilities for type-safe state management."
+    },
+    "hero": {
+      "title": "API Reference",
+      "tagline": "Complete generated documentation for the Tagix library actions, types, and interfaces.",
+      "searchPlaceholder": "Search API..."
+    },
+    "notFound": "No API items found matching \"{query}\"",
+    "groups": {
+      "functions": "Functions",
+      "types": "Types",
+      "interfaces": "Interfaces",
+      "classes": "Classes"
+    }
+  },
+  "releases": {
+    "head": {
+      "title": "Releases - Tagix",
+      "description": "Tagix release history and changelog. Type-safe state management powered by Tagged Unions."
+    },
+    "hero": {
+      "title": "Releases",
+      "tagline": "Tagix release history and changelog. Type-safe state management powered by Tagged Unions."
+    }
+  },
+  "footer": {
+    "sections": {
+      "site": "Site",
+      "social": "Social",
+      "legal": "Legal"
+    },
+    "links": {
+      "rss": "RSS Feed",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "disclaimer": "Disclaimer",
+      "contact": "Contact"
+    },
+    "latestVersion": "Latest version: {version}",
+    "builtWith": "Built with",
+    "copyright": "© 2026 Tagix. MIT License."
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: February 2026",
+      "contactPageLink": "contact page",
+      "head": {
+        "title": "Terms of Service - Tagix",
+        "description": "Terms of service for using Tagix, the type-safe state management library."
+      },
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "content": "By installing, accessing, or using the Tagix software library, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the library in your projects."
+        },
+        "license": {
+          "title": "2. License",
+          "content": "Tagix is released under the MIT License. You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to the conditions of the MIT License."
+        },
+        "disclaimer": {
+          "title": "3. Disclaimer of Warranties",
+          "content": "Tagix is provided \"as is\" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement."
+        },
+        "liability": {
+          "title": "4. Limitation of Liability",
+          "content": "In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software."
+        },
+        "changes": {
+          "title": "5. Changes to Terms",
+          "content": "We reserve the right to modify these terms at any time. Continued use of Tagix after any changes constitutes acceptance of the new terms."
+        },
+        "contact": {
+          "title": "6. Contact",
+          "content": "For questions about these terms, please visit our {link}."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: February 2026",
+      "contactPageLink": "contact page",
+      "head": {
+        "title": "Privacy Policy - Tagix",
+        "description": "Privacy policy for Tagix, the type-safe state management library."
+      },
+      "sections": {
+        "collect": {
+          "title": "1. Information We Collect",
+          "content": "Tagix is a client-side JavaScript library. We do not collect, store, or process any personal information from users of the library."
+        },
+        "website": {
+          "title": "2. Documentation Website",
+          "content": "Our documentation website is a static site. We do not use any tracking cookies or analytics services."
+        },
+        "thirdParty": {
+          "title": "3. Third-Party Services",
+          "content": "Tagix is distributed through npm (Node Package Manager). When you install Tagix, npm's privacy policy applies to that interaction. We encourage you to review npm's privacy practices."
+        },
+        "openSource": {
+          "title": "4. Open Source",
+          "content": "Tagix is open source software. The source code is publicly available on GitHub, and contributions are subject to GitHub's privacy policy."
+        },
+        "changes": {
+          "title": "5. Changes to This Policy",
+          "content": "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
+        },
+        "contact": {
+          "title": "6. Contact",
+          "content": "For privacy-related questions, please visit our {link}."
+        }
+      }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "updated": "Last updated: February 2026",
+      "contactPageLink": "contact page",
+      "head": {
+        "title": "Disclaimer - Tagix",
+        "description": "Disclaimer for Tagix, the type-safe state management library."
+      },
+      "sections": {
+        "general": {
+          "title": "General Disclaimer",
+          "content": "The information provided by Tagix and its documentation is for general informational purposes only. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the library or documentation."
+        },
+        "advice": {
+          "title": "No Professional Advice",
+          "content": "The content in our documentation is provided for technical reference and educational purposes regarding software development. It does not constitute professional IT consulting or architectural advice for your specific use cases."
+        },
+        "links": {
+          "title": "External Links",
+          "content": "Our documentation may contain links to external websites. We have no control over the content and availability of those sites and are not responsible for their content or practices."
+        },
+        "risk": {
+          "title": "Use at Your Own Risk",
+          "content": "Your use of Tagix is at your own risk. The library is provided without any guarantees or warranty. In association with the library, we make no warranties of any kind, either express or implied."
+        },
+        "liability": {
+          "title": "Limitation of Liability",
+          "content": "To the fullest extent permitted by law, we exclude all liability for any loss or damage arising out of or in connection with your use of Tagix."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "For questions about this disclaimer, please visit our {link}."
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "updated": "Last updated: February 2026",
+      "head": {
+        "title": "Contact - Tagix",
+        "description": "Contact information for Tagix, the type-safe state management library."
+      },
+      "intro": "We'd love to hear from you. Whether you have a question about features, pricing, or anything else, our team is ready to answer all your questions.",
+      "sections": {
+        "getInTouch": {
+          "title": "Get in Touch",
+          "content": "For any inquiries, please email us directly:"
+        },
+        "github": {
+          "title": "GitHub",
+          "content": "Report bugs, request features, or contribute to Tagix on our GitHub repository:"
+        }
+      }
+    }
+  },
+  "notFound": {
+    "head": {
+      "title": "Page Not Found | Tagix",
+      "description": "The page you are looking for does not exist."
+    },
+    "hero": {
+      "title": "Page not found",
+      "tagline": "The page you are looking for doesn't exist or has been moved.",
+      "returnHome": "Return Home",
+      "viewDocs": "View Documentation"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}

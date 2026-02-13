@@ -1,15 +1,25 @@
-import { define, useHead } from "@effuse/core";
+import { define, useHead, effect, computed, type Signal } from "@effuse/core";
 import { Link } from "@effuse/router";
+import { i18nStore } from "../../store/appI18n";
 import { initPageAnimations } from "../../utils/animations";
 import "../../styles.css";
 
-interface NotFoundPageScriptReturn {}
+interface NotFoundPageScriptReturn {
+  t: Signal<any>;
+}
 
 export const NotFoundPage = define<{}, NotFoundPageScriptReturn>({
-  script: ({ onMount }) => {
-    useHead({
-      title: "Page Not Found | Tagix",
-      description: "The page you are looking for does not exist.",
+  script: ({ onMount, useStore }) => {
+    const store = useStore("i18n") as typeof i18nStore;
+    const tVal = computed(() => store.translations.value?.notFound);
+
+    effect(() => {
+      const nfT = tVal.value;
+      if (!nfT) return;
+      useHead({
+        title: nfT.head.title,
+        description: nfT.head.description,
+      });
     });
 
     onMount(() => {
@@ -20,9 +30,9 @@ export const NotFoundPage = define<{}, NotFoundPageScriptReturn>({
       return () => {};
     });
 
-    return () => {};
+    return { t: tVal };
   },
-  template: () => (
+  template: ({ t }) => (
     <div class="tagix-home">
       <main class="tagix-main">
         <section class="tagix-hero">
@@ -36,17 +46,15 @@ export const NotFoundPage = define<{}, NotFoundPageScriptReturn>({
               />
             </div>
             <h1 class="tagix-section-title" style="margin-bottom: 1rem;">
-              Page not found
+              {() => t.value?.hero.title}
             </h1>
-            <p class="tagix-tagline serif">
-              The page you are looking for doesn't exist or has been moved.
-            </p>
+            <p class="tagix-tagline serif">{() => t.value?.hero.tagline}</p>
             <div class="tagix-button-group">
               <Link to="/" class="tagix-btn-primary">
-                Return Home
+                {() => t.value?.hero.returnHome}
               </Link>
               <Link to="/docs" class="tagix-btn-secondary">
-                View Documentation
+                {() => t.value?.hero.viewDocs}
               </Link>
             </div>
           </div>

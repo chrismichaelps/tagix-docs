@@ -11,7 +11,8 @@ export function buildNavigation(): NavCategory[] {
     if (!docs || docs.length === 0) continue;
 
     const pages: NavPage[] = [];
-    for (const [slug, entry] of docsRegistry.entries()) {
+    const entries = docsRegistry.entries();
+    for (const [slug, entry] of entries) {
       if (entry.category === catName || (!entry.category && catName === "Uncategorized")) {
         pages.push({ title: entry.title, slug, order: entry.order });
       }

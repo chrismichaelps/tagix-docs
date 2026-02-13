@@ -3,7 +3,7 @@ import "@fontsource/geist-mono";
 
 import { createApp } from "@effuse/core";
 import { App } from "./App";
-import { RouterLayer, LayoutLayer, AppStateLayer } from "./layers";
+import { RouterLayer, LayoutLayer, AppStateLayer, I18nLayer } from "./layers";
 import { logger } from "./utils/logger";
 import "./styles.css";
 
@@ -17,7 +17,7 @@ import "prismjs/components/prism-tsx";
 import "prismjs/components/prism-markdown";
 
 createApp(App)
-  .useLayers([LayoutLayer, AppStateLayer, RouterLayer])
+  .useLayers([LayoutLayer, AppStateLayer, RouterLayer, I18nLayer])
   .then((app) => {
     app
       .mount("#app", {

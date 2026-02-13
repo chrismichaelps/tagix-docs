@@ -1,28 +1,40 @@
-import { define, useHead } from "@effuse/core";
+import { define, useHead, effect, computed, type Signal } from "@effuse/core";
 import { Link } from "@effuse/router";
+import { i18nStore } from "../../store/appI18n";
 import { initPageAnimations } from "../../utils/animations";
 import "./styles.css";
 
-export const PrivacyPage = define({
-  script: () => {
-    useHead({
-      title: "Privacy Policy - Tagix",
-      description: "Privacy policy for Tagix, the type-safe state management library.",
+interface ScriptReturn {
+  t: Signal<any>;
+}
+
+export const PrivacyPage = define<{}, ScriptReturn>({
+  script: ({ useStore }) => {
+    const store = useStore("i18n") as typeof i18nStore;
+    const tVal = computed(() => store.translations.value?.legal.privacy);
+
+    effect(() => {
+      const privacyT = tVal.value;
+      if (!privacyT) return;
+      useHead({
+        title: privacyT.head.title,
+        description: privacyT.head.description,
+      });
     });
 
     setTimeout(() => initPageAnimations(), 100);
 
-    return {};
+    return { t: tVal };
   },
-  template: () => (
+  template: ({ t }) => (
     <div class="tagix-home">
       <main class="tagix-main">
         <section class="tagix-section">
           <div class="tagix-section-content tagix-section-narrow">
             <div class="tagix-hero-split">
               <div class="tagix-hero-text">
-                <h1 class="tagix-page-title">Privacy Policy</h1>
-                <p class="tagix-page-date">Last updated: February 2026</p>
+                <h1 class="tagix-page-title">{() => t.value?.title}</h1>
+                <p class="tagix-page-date">{() => t.value?.updated}</p>
               </div>
               <img
                 src="/illustrations/privacy.svg"
@@ -32,41 +44,25 @@ export const PrivacyPage = define({
             </div>
 
             <div class="tagix-legal-content">
-              <h2>1. Information We Collect</h2>
-              <p class="serif">
-                Tagix is a client-side JavaScript library. We do not collect, store, or process any
-                personal information from users of the library.
-              </p>
+              <h2>{() => t.value?.sections.collect.title}</h2>
+              <p class="serif">{() => t.value?.sections.collect.content}</p>
 
-              <h2>2. Documentation Website</h2>
-              <p class="serif">
-                Our documentation website is a static site. We do not use any tracking cookies or
-                analytics services.
-              </p>
+              <h2>{() => t.value?.sections.website.title}</h2>
+              <p class="serif">{() => t.value?.sections.website.content}</p>
 
-              <h2>3. Third-Party Services</h2>
-              <p class="serif">
-                Tagix is distributed through npm (Node Package Manager). When you install Tagix,
-                npm's privacy policy applies to that interaction. We encourage you to review npm's
-                privacy practices.
-              </p>
+              <h2>{() => t.value?.sections.thirdParty.title}</h2>
+              <p class="serif">{() => t.value?.sections.thirdParty.content}</p>
 
-              <h2>4. Open Source</h2>
-              <p class="serif">
-                Tagix is open source software. The source code is publicly available on GitHub, and
-                contributions are subject to GitHub's privacy policy.
-              </p>
+              <h2>{() => t.value?.sections.openSource.title}</h2>
+              <p class="serif">{() => t.value?.sections.openSource.content}</p>
 
-              <h2>5. Changes to This Policy</h2>
-              <p class="serif">
-                We may update this privacy policy from time to time. Any changes will be posted on
-                this page with an updated revision date.
-              </p>
+              <h2>{() => t.value?.sections.changes.title}</h2>
+              <p class="serif">{() => t.value?.sections.changes.content}</p>
 
-              <h2>6. Contact</h2>
+              <h2>{() => t.value?.sections.contact.title}</h2>
               <p class="serif">
-                For privacy-related questions, please visit our{" "}
-                <Link to="/contact">contact page</Link>.
+                {() => t.value?.sections.contact.content.replace("{link}", "")}
+                <Link to="/contact">{() => t.value?.contactPageLink}</Link>.
               </p>
             </div>
           </div>

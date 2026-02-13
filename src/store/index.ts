@@ -62,5 +62,14 @@ export {
   toggleAboutDropdown,
 } from "./aboutDropdown";
 export { releasesStore, ReleasesState, fetchChangelog } from "./releases";
+export {
+  appI18nStore,
+  I18nState,
+  type I18nStateType,
+  initI18n,
+  switchLocale,
+  t,
+  i18n,
+} from "./appI18n";
 
 export type { ApiItem } from "../content/api_data";

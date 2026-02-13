@@ -1,19 +1,27 @@
-import { define } from "@effuse/core";
+import { define, computed, type Signal } from "@effuse/core";
+import { i18nStore } from "../../../store/appI18n";
 
-export const ReleasesHero = define({
-  script: () => ({}),
-  template: () => (
+interface ScriptReturn {
+  t: Signal<any>;
+}
+
+export const ReleasesHero = define<{}, ScriptReturn>({
+  script: ({ useStore }) => {
+    const store = useStore("i18n") as typeof i18nStore;
+    const tVal = computed(() => store.translations.value?.releases.hero);
+    return {
+      t: tVal,
+    };
+  },
+  template: ({ t }) => (
     <section class="tagix-hero">
       <div class="tagix-hero-content">
         <div class="tagix-hero-split">
           <div class="tagix-hero-text">
             <div class="tagix-wordmark">
-              <h1 class="tagix-wordmark-title">Releases</h1>
+              <h1 class="tagix-wordmark-title">{() => t.value?.title}</h1>
             </div>
-            <p class="tagix-tagline serif">
-              Tagix release history and changelog. Type-safe state management powered by Tagged
-              Unions.
-            </p>
+            <p class="tagix-tagline serif">{() => t.value?.tagline}</p>
           </div>
           <img
             src="/illustrations/releases.svg"

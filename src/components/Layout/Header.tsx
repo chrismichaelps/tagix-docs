@@ -1,4 +1,4 @@
-import { define, signal } from "@effuse/core";
+import { define, signal, computed } from "@effuse/core";
 import { Link } from "@effuse/router";
 import { navigateTo } from "@effuse/router";
 import { HEADER_CLASSES, ROUTES, ASSETS } from "./constants";
@@ -9,12 +9,22 @@ import {
   AboutDropdownState,
   closeAboutDropdown,
 } from "../../store/aboutDropdown";
+import { i18nStore } from "../../store/appI18n";
 import { AboutDropdown } from "../AboutDropdown/AboutDropdown";
+import { LanguageSelector } from "../LanguageSelector";
 
 export const Header = define({
-  script: ({ useCallback }) => {
+  script: ({ useCallback, useStore }) => {
     const isMenuOpen = signal(MobileMenuState.$is("Open")(mobileMenuStore.stateValue));
     const isAboutOpen = signal(AboutDropdownState.$is("Open")(aboutDropdownStore.stateValue));
+    const store = useStore("i18n") as typeof i18nStore;
+    const tVal = computed(() => store.translations.value?.nav);
+
+    const aboutIcon = computed(() =>
+      isAboutOpen.value
+        ? "/icons/vt-flyout-button-text-icon-active.svg"
+        : "/icons/vt-flyout-button-text-icon.svg"
+    );
 
     mobileMenuStore.subscribe((state) => {
       isMenuOpen.value = MobileMenuState.$is("Open")(state);
@@ -57,23 +67,27 @@ export const Header = define({
     return {
       isMenuOpen,
       isAboutOpen,
+      aboutIcon,
       toggleMenu,
       handleDocsClick,
       handleApiClick,
       handleAboutClick,
       handleGitHubClick,
       handleReleasesClick,
+      t: tVal,
     };
   },
   template: ({
     isMenuOpen,
     isAboutOpen,
+    aboutIcon,
     toggleMenu,
     handleDocsClick,
     handleApiClick,
     handleAboutClick,
     handleGitHubClick,
     handleReleasesClick,
+    t,
   }) => (
     <>
       <header class={HEADER_CLASSES.HEADER}>
@@ -84,20 +98,16 @@ export const Header = define({
 
           <nav class={HEADER_CLASSES.NAV}>
             <Link to={ROUTES.DOCS} class={HEADER_CLASSES.NAV_LINK}>
-              Docs
+              {() => t.value?.docs}
             </Link>
             <Link to={ROUTES.API} class={HEADER_CLASSES.NAV_LINK}>
-              API
+              {() => t.value?.api}
             </Link>
             <div class={`tagix-nav-item-wrapper ${isAboutOpen.value ? "is-open" : ""}`}>
               <button class="tagix-nav-link tagix-nav-button" onClick={handleAboutClick}>
-                <span>About</span>
+                <span>{() => t.value?.about}</span>
                 <img
-                  src={
-                    isAboutOpen.value
-                      ? "/icons/vt-flyout-button-text-icon-active.svg"
-                      : "/icons/vt-flyout-button-text-icon.svg"
-                  }
+                  src={(() => aboutIcon.value) as any}
                   alt="Toggle About"
                   class="tagix-nav-icon"
                   width="20"
@@ -106,6 +116,7 @@ export const Header = define({
               </button>
               <AboutDropdown />
             </div>
+            <LanguageSelector />
           </nav>
 
           <button
@@ -123,16 +134,16 @@ export const Header = define({
 
       <nav class={`tagix-mobile-menu ${isMenuOpen.value ? "is-open" : ""}`}>
         <a href="/docs" class="tagix-mobile-menu-link" onClick={handleDocsClick}>
-          Docs
+          {() => t.value?.docs}
         </a>
         <a href="/api" class="tagix-mobile-menu-link" onClick={handleApiClick}>
-          API
+          {() => t.value?.api}
         </a>
         <button
           class={`tagix-mobile-menu-link tagix-mobile-menu-button ${isAboutOpen.value ? "is-open" : ""}`}
           onClick={handleAboutClick}
         >
-          <span>About</span>
+          <span>{() => t.value?.about}</span>
           <img
             src="/icons/vt-flyout-button-text-icon.svg"
             alt=""
@@ -144,7 +155,7 @@ export const Header = define({
         <div class={`tagix-mobile-nav-expand ${isAboutOpen.value ? "is-open" : ""}`}>
           <div class="tagix-mobile-nav-content">
             <a href="/releases" class="tagix-mobile-sub-link" onClick={handleReleasesClick}>
-              Releases
+              {() => t.value?.releases}
             </a>
           </div>
         </div>
@@ -155,8 +166,12 @@ export const Header = define({
           class="tagix-mobile-menu-link"
           onClick={handleGitHubClick}
         >
-          GitHub
+          {() => t.value?.github}
         </a>
+        <div class="tagix-mobile-menu-divider"></div>
+        <div class="tagix-mobile-lang-selector">
+          <LanguageSelector />
+        </div>
       </nav>
     </>
   ),
