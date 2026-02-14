@@ -9,19 +9,19 @@ importers:
     dependencies:
       "@effuse/core":
         specifier: 1.1.0
-        version: 1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
+        version: 1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
       "@effuse/i18n":
         specifier: ^1.0.4
-        version: 1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
+        version: 1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
       "@effuse/ink":
         specifier: ^1.0.4
-        version: 1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
+        version: 1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
       "@effuse/router":
         specifier: 1.1.0
-        version: 1.1.0(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
+        version: 1.1.0(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
       "@effuse/store":
         specifier: 1.0.3
-        version: 1.0.3(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
+        version: 1.0.3(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))
       "@fontsource/geist-mono":
         specifier: ^5.2.7
         version: 5.2.7
@@ -44,8 +44,8 @@ importers:
         specifier: ^1.30.0
         version: 1.30.0
       tagix:
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^1.2.1
+        version: 1.2.1
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -84,8 +84,8 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18
       typedoc:
-        specifier: ^0.28.16
-        version: 0.28.16(typescript@5.9.3)
+        specifier: ^0.28.17
+        version: 0.28.17(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -190,13 +190,13 @@ packages:
       "@opentelemetry/sdk-trace-web":
         optional: true
 
-  "@effect/platform@0.94.4":
+  "@effect/platform@0.94.5":
     resolution:
       {
-        integrity: sha512-mK8pbskFAcBRA5Ooyt02kCBuWltZakyaDcM4ByTY0jXQMFC3NUveNK62JVH7XB+f3XZ8OoBBxUnlLben4plEKQ==,
+        integrity: sha512-z05APUiDDPbodhTkH/RJqOLoCU11bU2IZLfcwLFrld03+ob1VeqRnELQlmueLIYm6NZifHAtjl32V+GRt34y4A==,
       }
     peerDependencies:
-      effect: ^3.19.16
+      effect: ^3.19.17
 
   "@effuse/compiler@1.0.3":
     resolution:
@@ -1285,10 +1285,10 @@ packages:
       }
     engines: { node: ">=8" }
 
-  effect@3.19.16:
+  effect@3.19.17:
     resolution:
       {
-        integrity: sha512-7+XC3vGrbAhCHd8LTFHvnZjRpZKZ8YHRZqJTkpNoxcJ2mCyNs2SwI+6VkV/ij8Y3YW7wfBN4EbU06/F5+m/wkQ==,
+        integrity: sha512-MChgn9z0y3KJ2DJ+VsZt1bdVDJ0bDIZt9zm4s3iPpRLzgcEGDOIP8pwADjAWifaP0S672nlRE5rZPBbyDcjn1g==,
       }
 
   electron-to-chromium@1.5.286:
@@ -2014,10 +2014,10 @@ packages:
       }
     engines: { node: ">=0.10.0" }
 
-  tagix@1.2.0:
+  tagix@1.2.1:
     resolution:
       {
-        integrity: sha512-LHWc6O2CGBMD68hNuX3rboB2je0rY0ANpL105MOdNpklrwH7DjmK9QwGUHW6Gt1OVPgwdDIz9rGr9ujB/usLsA==,
+        integrity: sha512-9+WrhzKZqzqTR0Wy/7iVjDrUU9gRDQDtly/BxS9kMn0gtDyEwYnY2gEz+xjNFCxPwvJ01Go+pDfajS06yM3ONQ==,
       }
 
   tailwind-merge@3.4.0:
@@ -2059,10 +2059,10 @@ packages:
       }
     engines: { node: ">= 0.8.0" }
 
-  typedoc@0.28.16:
+  typedoc@0.28.17:
     resolution:
       {
-        integrity: sha512-x4xW77QC3i5DUFMBp0qjukOTnr/sSg+oEs86nB3LjDslvAmwe/PUGDWbe3GrIqt59oTqoXK5GRK9tAa0sYMiog==,
+        integrity: sha512-ZkJ2G7mZrbxrKxinTQMjFqsCoYY6a5Luwv2GKbTnBCEgV2ihYm5CflA9JnJAwH0pZWavqfYxmDkFHPt4yx2oDQ==,
       }
     engines: { node: ">= 18", pnpm: ">= 10" }
     hasBin: true
@@ -2225,20 +2225,20 @@ snapshots:
       "@babel/helper-string-parser": 7.27.1
       "@babel/helper-validator-identifier": 7.28.5
 
-  "@effect/opentelemetry@0.60.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)(effect@3.19.16)":
+  "@effect/opentelemetry@0.60.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)(effect@3.19.17)":
     dependencies:
-      "@effect/platform": 0.94.4(effect@3.19.16)
+      "@effect/platform": 0.94.5(effect@3.19.17)
       "@opentelemetry/semantic-conventions": 1.39.0
-      effect: 3.19.16
+      effect: 3.19.17
     optionalDependencies:
       "@opentelemetry/api": 1.9.0
       "@opentelemetry/resources": 2.5.1(@opentelemetry/api@1.9.0)
       "@opentelemetry/sdk-trace-base": 2.5.1(@opentelemetry/api@1.9.0)
       "@opentelemetry/sdk-trace-web": 2.5.1(@opentelemetry/api@1.9.0)
 
-  "@effect/platform@0.94.4(effect@3.19.16)":
+  "@effect/platform@0.94.5(effect@3.19.17)":
     dependencies:
-      effect: 3.19.16
+      effect: 3.19.17
       find-my-way-ts: 0.1.6
       msgpackr: 1.11.8
       multipasta: 0.2.7
@@ -2249,19 +2249,19 @@ snapshots:
       "@babel/parser": 7.29.0
       "@babel/traverse": 7.29.0
       "@babel/types": 7.29.0
-      effect: 3.19.16
+      effect: 3.19.17
     optionalDependencies:
       vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
-  "@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)":
+  "@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)":
     dependencies:
-      "@effect/opentelemetry": 0.60.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)(effect@3.19.16)
+      "@effect/opentelemetry": 0.60.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)(effect@3.19.17)
       "@opentelemetry/api": 1.9.0
       "@opentelemetry/sdk-trace-base": 2.5.1(@opentelemetry/api@1.9.0)
       "@opentelemetry/sdk-trace-web": 2.5.1(@opentelemetry/api@1.9.0)
-      effect: 3.19.16
+      effect: 3.19.17
     transitivePeerDependencies:
       - "@effect/platform"
       - "@opentelemetry/resources"
@@ -2270,25 +2270,25 @@ snapshots:
       - "@opentelemetry/sdk-trace-node"
       - "@opentelemetry/semantic-conventions"
 
-  "@effuse/i18n@1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
+  "@effuse/i18n@1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
     dependencies:
-      "@effuse/core": 1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
-      effect: 3.19.16
+      "@effuse/core": 1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
+      effect: 3.19.17
 
-  "@effuse/ink@1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
+  "@effuse/ink@1.0.4(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
     dependencies:
-      "@effuse/core": 1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
-      effect: 3.19.16
+      "@effuse/core": 1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
+      effect: 3.19.17
 
-  "@effuse/router@1.1.0(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
+  "@effuse/router@1.1.0(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
     dependencies:
-      "@effuse/core": 1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
-      effect: 3.19.16
+      "@effuse/core": 1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
+      effect: 3.19.17
 
-  "@effuse/store@1.0.3(@effuse/core@1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
+  "@effuse/store@1.0.3(@effuse/core@1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))":
     dependencies:
-      "@effuse/core": 1.1.0(@effect/platform@0.94.4(effect@3.19.16))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
-      effect: 3.19.16
+      "@effuse/core": 1.1.0(@effect/platform@0.94.5(effect@3.19.17))(@opentelemetry/resources@2.5.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
+      effect: 3.19.17
 
   "@esbuild/aix-ppc64@0.27.3":
     optional: true
@@ -2741,7 +2741,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  effect@3.19.16:
+  effect@3.19.17:
     dependencies:
       "@standard-schema/spec": 1.1.0
       fast-check: 3.23.2
@@ -3154,7 +3154,7 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  tagix@1.2.0: {}
+  tagix@1.2.1: {}
 
   tailwind-merge@3.4.0: {}
 
@@ -3173,7 +3173,7 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
 
-  typedoc@0.28.16(typescript@5.9.3):
+  typedoc@0.28.17(typescript@5.9.3):
     dependencies:
       "@gerrit0/mini-shiki": 3.22.0
       lunr: 2.3.9
