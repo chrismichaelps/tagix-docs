@@ -1,39 +1,81 @@
-import { taggedEnum, tryCatchAsync } from "tagix";
-import { I18nLoadError } from "./errors";
-import { LOCALES_PATH } from "./constants";
+import { matchEither, tryCatchAsync } from "tagix";
+import { LOCALES_PATH, LOCALE_STORAGE_KEY, Locale } from "./constants";
+import { I18nLoadError, I18nInvalidLocaleError } from "./errors";
+import { I18nLoadingState, type I18nLoadingStateType, type TranslationData } from "./state";
+import { i18n, isSupportedLocale } from "./instance";
+import { appI18nStore } from "./store";
+import { i18nActions } from "./actions";
 
-export type I18nLoadErrorType = InstanceType<typeof I18nLoadError>;
-
-export type TranslationData = any;
-
-export const LoadResult = taggedEnum({
-  Success: { data: {} as TranslationData },
-  Failure: { error: null as unknown as I18nLoadErrorType },
-});
-
-export type LoadResultType = typeof LoadResult.State;
-
-export async function loadTranslations(locale: string): Promise<LoadResultType> {
+export async function loadTranslations(locale: string): Promise<I18nLoadingStateType> {
   const result = await tryCatchAsync(
     async () => {
       const response = await fetch(`${LOCALES_PATH}/${locale}.json`);
       if (!response.ok) {
         throw new I18nLoadError({
           message: `HTTP error! status: ${response.status}`,
-        });
+        } as Record<string, unknown>);
       }
       return (await response.json()) as TranslationData;
     },
-    (error) =>
-      new I18nLoadError({
-        message: error instanceof Error ? error.message : "Unknown error",
-        cause: error,
-      }) as unknown as I18nLoadErrorType
+    (e): I18nLoadError => {
+      const args: Record<string, unknown> = {
+        message: e instanceof Error ? e.message : "Unknown error",
+        cause: e,
+      };
+      return new I18nLoadError(args);
+    }
   );
 
-  if (result._tag === "Right") {
-    return LoadResult.Success({ data: result.right as TranslationData });
-  } else {
-    return LoadResult.Failure({ error: result.left as unknown as I18nLoadErrorType });
-  }
+  return matchEither(result, {
+    onLeft: (error): I18nLoadingStateType => I18nLoadingState.Failure({ error }),
+    onRight: (data): I18nLoadingStateType => I18nLoadingState.Success({ data }),
+  });
 }
+
+export const initI18n = async () => {
+  const locale = appI18nStore.stateValue.locale;
+
+  appI18nStore.dispatch(i18nActions.setLocale, { locale });
+
+  const result = await loadTranslations(locale);
+
+  I18nLoadingState.$match(result, {
+    Success: ({ data }) => {
+      appI18nStore.dispatch(i18nActions.setReady, { locale, translations: data });
+    },
+    Failure: ({ error }) => {
+      appI18nStore.dispatch(i18nActions.setError, { locale, message: error.message });
+    },
+    Idle: () => {},
+    Loading: () => {},
+  });
+};
+
+export const switchLocale = async (locale: Locale) => {
+  if (!isSupportedLocale(locale)) {
+    appI18nStore.dispatch(i18nActions.setError, {
+      locale: i18n.getLocale() as Locale,
+      message: new I18nInvalidLocaleError({
+        message: `Cannot switch to unsupported locale: ${locale}`,
+      } as Record<string, unknown>).message,
+    });
+    return;
+  }
+
+  localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+  await i18n.setLocale(locale);
+  appI18nStore.dispatch(i18nActions.setLocale, { locale });
+
+  const result = await loadTranslations(locale);
+
+  I18nLoadingState.$match(result, {
+    Success: ({ data }) => {
+      appI18nStore.dispatch(i18nActions.setReady, { locale, translations: data });
+    },
+    Failure: ({ error }) => {
+      appI18nStore.dispatch(i18nActions.setError, { locale, message: error.message });
+    },
+    Idle: () => {},
+    Loading: () => {},
+  });
+};
